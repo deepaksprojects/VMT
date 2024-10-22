@@ -1,12 +1,8 @@
-import { View, Text } from "react-native";
+import OTP from "@/screens/otp";
 import React from "react";
 
 const otp = () => {
-  return (
-    <View>
-      <Text>otp</Text>
-    </View>
-  );
+  return <OTP />;
 };
 
 export default otp;

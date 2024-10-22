@@ -1,12 +1,8 @@
-import { View, Text } from "react-native";
+import OnBoardingScreen from "@/screens/onBoardingScreen";
 import React from "react";
 
-const onBoarding = () => {
-  return (
-    <View>
-      <Text>onBoarding</Text>
-    </View>
-  );
+const onBoardingPage = () => {
+  return <OnBoardingScreen />;
 };
 
-export default onBoarding;
+export default onBoardingPage;

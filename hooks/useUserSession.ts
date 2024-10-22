@@ -4,10 +4,14 @@ import { useDispatch, useSelector } from "react-redux";
 import useUser from "./mmkvStorage/useUser";
 
 const useUserSession = () => {
-  const { data, token } = useSelector((state: any) => state.user);
+  const { data, sessionToken } = useSelector((state: any) => state.user);
   const dispatch = useDispatch();
-  const { updateUser: updateUserMMKV, user: mmkvUser } = useUser();
-
+  const {
+    updateUser: updateUserMMKV,
+    user: mmkvUser,
+    updateToken,
+    token,
+  } = useUser();
   const updateUserData = useCallback(
     (value: any) => {
       dispatch(updateUser(value));
@@ -18,17 +22,17 @@ const useUserSession = () => {
   const updateUserToken = useCallback(
     (value: string) => {
       dispatch(updateSessionToken(value));
+      updateToken(value);
     },
-    [token]
+    [sessionToken]
   );
   useEffect(() => {
     if (mmkvUser?.name) dispatch(updateUser(mmkvUser));
     mmkvUser;
   }, []);
-
   const user = {
-    data,
-    token,
+    data: data || mmkvUser,
+    sessionToken: sessionToken || token,
   };
   return { user, updateUserData, updateUserToken };
 };

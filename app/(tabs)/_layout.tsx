@@ -19,8 +19,7 @@ function TabBarIcon(props: {
 export default function TabLayout() {
   const colorScheme = useColorScheme();
   const { user } = useUserSession();
-
-  if (!user.token) {
+  if (!user.sessionToken) {
     return <Redirect href={"/auth/onBoarding"} />;
   }
 
