@@ -10,6 +10,8 @@ import useUserSession from "@/hooks/useUserSession";
 import Notifications, {
   registerForPushNotificationsAsync,
 } from "@/utils/notification";
+import useContacts from "@/hooks/mmkvStorage/useContacts";
+import * as Contacts from "expo-contacts";
 
 // You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
 function TabBarIcon(props: {
@@ -29,6 +31,24 @@ export default function TabLayout() {
 
   const notificationListener = useRef<Notifications.Subscription>();
   const responseListener = useRef<Notifications.Subscription>();
+  // const { contacts } = useContacts();
+  // console.log("contacts", contacts);
+
+  useEffect(() => {
+    (async () => {
+      const { status } = await Contacts.requestPermissionsAsync();
+      if (status === "granted") {
+        const { data } = await Contacts.getContactsAsync({
+          fields: [Contacts.Fields.Emails],
+        });
+
+        if (data.length > 0) {
+          const contact = data[0];
+          console.log(contact);
+        }
+      }
+    })();
+  }, []);
 
   useEffect(() => {
     registerForPushNotificationsAsync()

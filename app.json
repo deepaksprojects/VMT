@@ -41,6 +41,12 @@
             "newArchEnabled": true
           }
         }
+      ],
+      [
+        "expo-contacts",
+        {
+          "contactsPermission": "Allow VMT to access your contacts."
+        }
       ]
     ],
     "experiments": {
