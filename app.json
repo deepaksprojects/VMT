@@ -14,14 +14,15 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.anonymous.VMT"
+      "bundleIdentifier": "com.codezz.vmt"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.anonymous.VMT"
+      "googleServicesFile": "./google-services.json",
+      "package": "com.codezz.vmt"
     },
     "web": {
       "bundler": "metro",
@@ -44,6 +45,11 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "5a61fd9e-cba2-4238-bf53-b2ef7d22c394"
+      }
     }
   }
 }
