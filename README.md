@@ -17,7 +17,7 @@ The **Vehicle Maintenance Tracker** is a mobile application built with React Nat
 
 - **Framework**: React Native
 - **State Management**: [Redux](https://redux.js.org/) 
-- **Navigation**: [React Navigation](https://reactnavigation.org/)
+- **Navigation**: [Expo-Router](https://docs.expo.dev/router/introduction/)
 - **Database**: [Firebase](https://firebase.google.com/) 
 - **Authentication**: [Firebase Authentication](https://firebase.google.com/docs/auth)
 
