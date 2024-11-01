@@ -27,4 +27,4 @@ To run the Vehicle Maintenance Tracker app locally, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/vehicle-maintenance-tracker.git
+   git clone https://github.com/deepaksprojects/VMT.git
